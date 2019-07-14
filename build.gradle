@@ -19,7 +19,11 @@ plugins {
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    mavenLocal()
+    maven{
+        url'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    mavenCentral()//3.最后查找maven中央库
 }
 
 dependencies {
@@ -28,6 +32,11 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
+    // https://mvnrepository.com/artifact/org.mockito/mockito-all
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+
+
 }
 
 application {

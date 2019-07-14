@@ -3,12 +3,36 @@
  */
 package Gradle.builds.Java.projects;
 
+
+
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import java.util.LinkedList;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
+
+    @Test
+    public void testAppHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    }
+
+    @Test
+    public void testMockClass() throws Exception {
+        // you can mock concrete classes, not only interfaces
+        LinkedList mockedList = mock(LinkedList.class);
+
+        // stubbing appears before the actual execution
+        String value = "first";
+        when(mockedList.get(0)).thenReturn(value);
+
+        assertEquals(mockedList.get(0), value);
+
     }
 }

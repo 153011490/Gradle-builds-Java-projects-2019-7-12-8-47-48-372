@@ -5,7 +5,7 @@ package Gradle.builds.Java.projects;
 
 public class App {
     public String getGreeting() {
-        return "Hello world.";
+        return "This is a Gradle Project";
     }
 
     public static void main(String[] args) {
